@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск текста</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="/js/app.js"></script>
+</head>
+<body>
+    <h1>Поиск</h1>
+    <noscript>
+        <h2 style="color: #ff0000">
+            Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable Javascript and reload this page!
+        </h2>
+    </noscript>
+    <form id="searchInfoForm">
+        <label for="url">Стартовый URL</label>
+        <input type="text" id="url" required><br/>
+        <label for="threadsCount">Кол-во потоков</label>
+        <input type="text" id="threadsCount" required><br/>
+        <label for="textToSearch">Искомый текст</label>
+        <input type="text" id="textToSearch" required><br/>
+        <label for="scannedUrlsCount">Макс. кол-во URL</label>
+        <input type="text" id="scannedUrlsCount" required><br/>
+    </form>
+    <button id="start" type="submit">Старт</button>
+    <button id="pause" type="submit">Пауза</button>
+    <button id="stop" type="submit">Стоп</button>
+    <h4>Результат</h4>
+    <progress id="progress" value="0" max="100"></progress>
+    <ol id="results">
+    </ol>
+</body>
+</html>
